@@ -24,9 +24,10 @@ jobs:
     steps:
       - run:
           name: "print name"
-          command: echo $myvar
+          command: echo $myvar is a student of $school
           environment:
             myvar: Biodun
+            school: LBS
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
