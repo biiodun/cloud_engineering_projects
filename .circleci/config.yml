@@ -22,7 +22,11 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: "echo world"
+      - run:
+        name: print name
+        command: echo $myvar
+        environment:
+          myvar: Biodun
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
