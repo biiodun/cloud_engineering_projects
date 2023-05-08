@@ -18,15 +18,15 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  print_world:
+  print_name:
     docker:
       - image: circleci/node:13.8.0
     steps:
       - run:
-        name: print name
-        command: echo $myvar
-        environment:
-          myvar: Biodun
+          name: "print name"
+          command: echo $myvar
+          environment:
+            myvar: Biodun
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -34,6 +34,6 @@ workflows:
   welcome:
     jobs:
       - print_hello
-      - print_world:
+      - print_name:
           requires:
             - print_hello
