@@ -10,11 +10,11 @@ commands:
   greetings:
     parameters:
       username:
-        efault: "user"
-        type: strg
+        default: "user"
+        type: string
     steps:
       - run: echo "You are welcome, <<parameters.username>>"
-      - run: 
+      - run: exit 1
           name: on error
           command: echo "Hello Error"
           when: on_fail
