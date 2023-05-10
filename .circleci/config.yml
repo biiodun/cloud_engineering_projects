@@ -13,11 +13,7 @@ commands:
         default: "user"
         type: string
     steps:
-      - run: exit 1
-      - run: 
-          name: on error
-          command: echo "Hello Error"
-          when: on_fail
+      - run: echo "You are welcome, <<parameters.username>>"
 
 jobs:
   greet_user:
@@ -25,7 +21,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - greetings:
-        username: "Elon Musk"
+          username: "Elon Musk"
           
 workflows:
   welcome:
