@@ -4,29 +4,48 @@ version: 2.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/configuration-reference/#jobs
-
-#declaration of commands practice
-commands:
-  greetings:
+commands: # a reusable command with parameters
+  greeting:
     parameters:
-      username:
-        default: "user"
+      to:
+        default: "world"
         type: string
     steps:
-      - run: echo "You are welcome, <<parameters.username>>"
-
+      - run: echo "Hello <<parameters.to>>"
 jobs:
-  greet_user:
+  my-job:
     docker:
       - image: cimg/base:stable
+        
     steps:
-      - greetings:
-          to: "Elon Musk"
-          
+      - greeting:
+          to: "My-Name"
 workflows:
-  welcome:
+  my-workflow:
     jobs:
-      - greet_user
+      - my-job
+#declaration of commands practice
+# commands:
+#   greetings:
+#     parameters:
+#       username:
+#         default: "user"
+#         type: string
+#     steps:
+#       - run: echo "You are welcome, <<parameters.username>>"
+
+# jobs:
+#   greet_user:
+#     docker:
+#       - image: cimg/base:stable
+#     steps:
+#       - greetings:
+#           to: "Elon Musk"
+
+# workflows:
+#   welcome:
+#     jobs:
+#       - greet_user
       
   # print_hello:
   #   # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
