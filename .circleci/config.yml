@@ -10,7 +10,7 @@ commands:
   greetings:
     parameters:
       username:
-        default:""
+        default:"user"
         type: string
   steps:
     - run: echo "You are welcome, <<parameters.username>>"
