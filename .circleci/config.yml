@@ -10,8 +10,8 @@ commands:
   greetings:
     parameters:
       username:
-        default: "user"
-        type: string
+        efault: "user"
+        type: strg
     steps:
       - run: echo "You are welcome, <<parameters.username>>"
       - run: 
