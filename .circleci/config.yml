@@ -12,8 +12,8 @@ commands:
       username:
         default: "user"
         type: string
-  steps:
-    - run: echo "You are welcome, <<parameters.username>>"
+    steps:
+      - run: echo "You are welcome, <<parameters.username>>"
 
 jobs:
   greet_user:
