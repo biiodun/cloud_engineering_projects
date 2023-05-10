@@ -21,8 +21,10 @@ jobs:
       - image: cimg/base:stable
     steps:
       - run:
-        - greetings:
-            username: "Elon Musk"
+        name: "calling function"
+        command: 
+          - greetings:
+              username: "Elon Musk"
           
 workflows:
   welcome:
