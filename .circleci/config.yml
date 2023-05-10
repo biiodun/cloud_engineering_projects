@@ -20,9 +20,8 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - run: 
-          greetings:
-            username: "Elon Musk"
+      greetings:
+        username: "Elon Musk"
           
 workflows:
   welcome:
