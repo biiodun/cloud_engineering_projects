@@ -13,8 +13,8 @@ commands:
         default: "user"
         type: string
     steps:
-      - run: echo "You are welcome, <<parameters.username>>"
       - run: exit 1
+      - run: 
           name: on error
           command: echo "Hello Error"
           when: on_fail
